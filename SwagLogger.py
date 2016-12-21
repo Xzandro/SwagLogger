@@ -33,7 +33,7 @@ class SwagLogger(SWPlugin.SWPlugin):
     def process_data(self, req_json, resp_json):
         command = req_json.get('command')
 
-        if command == 'GetGuildWarBattleLogByGuildId':
+        if command == 'GetGuildWarBattleLogByGuildId' or command == 'GetGuildWarBattleLogByWizardId':
             if resp_json:
                 try:
                     request = urllib2.Request(self.log_url)
